@@ -91,20 +91,27 @@
     </footer>
     <script type="text/javascript" src="embed.min.js"></script>
     <script>
-        function pingServer() {
-            var embed = new ServerEmbed(document.getElementById("embed"), "500px");
-            embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Ballz Network", true, true, false);
-        }
-        function rePing() {
-    var oldEmbed = document.getElementById("embed");
-    oldEmbed.parentNode.removeChild(oldEmbed);
-    var newEmbed = document.createElement("div");
-    newEmbed.id = "embed";
-    document.getElementById("serverpinger").appendChild(newEmbed);
-    pingServer();
-}
+    function pingServer() {
+        var embed = new ServerEmbed(document.getElementById("embed"), "500px");
+        embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Ballz Network", true, true, false);
+
+        // Reset the iframe
+        var iframe = document.getElementById("discord_widget");
+        iframe.src = iframe.src;
+    }
+
+    function rePing() {
+        var oldEmbed = document.getElementById("embed");
+        oldEmbed.parentNode.removeChild(oldEmbed);
+        var newEmbed = document.createElement("div");
+        newEmbed.id = "embed";
+        document.getElementById("serverpinger").appendChild(newEmbed);
         pingServer();
-        setInterval(rePing, 20000);
-    </script>
+    }
+
+    pingServer();
+    setInterval(rePing, 20000);
+</script>
+
 </body>
 </html>
