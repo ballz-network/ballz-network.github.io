@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ballz Network - Minecraft Server</title>
+    <title>Ballz Network - Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,13 +50,10 @@
 </head>
 <body>
     <header>
-        <h1>Ballz Network - Minecraft Server</h1>
+        <h1>Ballz Network - Home</h1>
     </header>
     <section>
         <iframe src="https://discord.com/widget?id=1235224866614149140&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" id= "discord_widget"></iframe>
-    </section>
-    <section id="serverpinger">
-    <div id="embed"></div>
     </section>
     <section id="home">
         <h2>Welcome to Ballz Network!</h2>
@@ -89,29 +86,5 @@
     <footer>
         <p>&copy; 2024 Ballz Network. All rights reserved.</p>
     </footer>
-    <script type="text/javascript" src="/scripts/embed.min.js"></script>
-    <script>
-    function pingServer() {
-        var embed = new ServerEmbed(document.getElementById("embed"), "500px");
-        embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Ballz Network", true, true, false);
-
-        // Reset the iframe
-        var iframe = document.getElementById("discord_widget");
-        iframe.src = iframe.src;
-    }
-
-    function rePing() {
-        var oldEmbed = document.getElementById("embed");
-        oldEmbed.parentNode.removeChild(oldEmbed);
-        var newEmbed = document.createElement("div");
-        newEmbed.id = "embed";
-        document.getElementById("serverpinger").appendChild(newEmbed);
-        pingServer();
-    }
-
-    pingServer();
-    setInterval(rePing, 20000);
-</script>
-
 </body>
 </html>
