@@ -91,11 +91,15 @@
     <script>
         function pingServer() {
             var embed = new ServerEmbed(document.getElementById("embed"), "500px");
-            embed.parentNode.removeChild(embed);
             embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Ballz Network", true, true, false);
         }
+        function rePing() {
+            var embed = document.getElementById("embed");
+            embed.parentNode.removeChild(embed);
+            setTimeout(pingServer,2000);
+        }
         pingServer();
-        setInterval(pingServer, 60000);
+        setInterval(rePing, 60000);
     </script>
 </body>
 </html>
