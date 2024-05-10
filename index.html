@@ -94,10 +94,13 @@
             embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Ballz Network", true, true, false);
         }
         function rePing() {
-            var embed = document.getElementById("embed");
-            embed.parentNode.removeChild(embed);
-            setTimeout(pingServer,2000);
-        }
+    var oldEmbed = document.getElementById("embed");
+    oldEmbed.parentNode.removeChild(oldEmbed);
+    var newEmbed = document.createElement("div");
+    newEmbed.id = "embed";
+    document.getElementById("serverpinger").appendChild(newEmbed);
+    pingServer();
+}
         pingServer();
         setInterval(rePing, 60000);
     </script>
