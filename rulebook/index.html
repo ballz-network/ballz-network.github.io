@@ -53,10 +53,18 @@
             border: 1px solid #ccc;
             margin-top: 10px;
         }
+        #discord-rules-heading {
+            cursor: pointer;
+        }
         /* Added style for the icon */
         #discord-rules-heading::before {
-            content: "\25BC"; /* Down arrow HTML entity */
+            content: "\25BA"; /* Right arrow HTML entity */
             margin-right: 5px;
+            transition: transform 0.3s ease; /* Added transition property */
+        }
+        /* Rotates the arrow when the rules are visible */
+        #discord-rules-heading.open::before {
+            transform: rotate(90deg);
         }
     </style>
 </head>
@@ -98,6 +106,7 @@
     <script>
         document.getElementById("discord-rules-heading").addEventListener("click", function() {
             var rulesDiv = document.querySelector(".discord-rules");
+            this.classList.toggle("open"); // Toggles the "open" class on the heading
             if (rulesDiv.style.display === "none") {
                 rulesDiv.style.display = "block";
             } else {
