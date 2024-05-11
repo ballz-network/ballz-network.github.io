@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ballz Network - Home</title>
+    <title>Ballz Network - Rulebook</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,37 +46,36 @@
             bottom: 0;
             width: 100%;
         }
-        .dropdown-content {
+        .discord-rules {
             display: none;
             padding: 20px;
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             margin-top: 10px;
         }
-        #discord-link {
-            color: #000000;
-        }
-        #discord-link:hover {
-            color: #f00000;
-            cursor: pointer;
+        /* Added style for the icon */
+        #discord-rules-heading::before {
+            content: "\25BC"; /* Down arrow HTML entity */
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Ballz Network - Home</h1>
+        <h1>Ballz Network - Rulebook</h1>
     </header>
     <nav>
         <p>
             <a href="/">Home</a>
             <a href="/server">Server</a>
-            <a href="/discord"">Discord</a>
+            <a href="/discord">Discord</a>
             <a href="/rulebook">Rulebook</a>
         </p>
     </nav>
     <section id="rules">
-        <a id="discord-link>Discord Server Rules</a>
-        <div class="dropdown-content" id="discord-rules">
+        <!-- Added an ID for the Discord rules section -->
+        <h2 id="discord-rules-heading">Discord Server Rules</h2>
+        <div class="discord-rules">
             <p>Please follow these rules to ensure a positive experience for everyone:</p>
             <p>
                 Be Respectful: Treat everyone with respect and kindness. Harassment, hate speech, bullying, or any form of discrimination will not be tolerated.<br>
@@ -97,10 +96,13 @@
     </footer>
 
     <script>
-        document.getElementById("discord-link").addEventListener("click", function(event) {
-            event.preventDefault();
-            var dropdownContent = document.getElementById("discord-rules");
-            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+        document.getElementById("discord-rules-heading").addEventListener("click", function() {
+            var rulesDiv = document.querySelector(".discord-rules");
+            if (rulesDiv.style.display === "none") {
+                rulesDiv.style.display = "block";
+            } else {
+                rulesDiv.style.display = "none";
+            }
         });
     </script>
 </body>
