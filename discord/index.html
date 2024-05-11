@@ -62,6 +62,19 @@
     <section>
         <iframe src="https://discord.com/widget?id=1235224866614149140&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" id= "discord_widget"></iframe>
     </section>
+    <script>
+    function pingServer() {
+        var iframe = document.getElementById("discord_widget");
+        iframe.src = iframe.src;
+    }
+
+    function rePing() {
+        pingServer();
+    }
+
+    pingServer();
+    setInterval(rePing, 20000);
+    </script>
     <footer>
         <p>&copy; 2024 Ballz Network. All rights reserved.</p>
     </footer>
