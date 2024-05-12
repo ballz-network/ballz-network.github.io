@@ -62,6 +62,7 @@
     </nav>
     <section id="serverpinger">
     <div id="embed"></div>
+    <div id="surival-embed"></div>
     </section>
     <section id="connect">
         <h2>Connect</h2>
@@ -75,7 +76,9 @@
     <script>
     function pingServer() {
         var embed = new ServerEmbed(document.getElementById("embed"), "500px");
-        embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Ballz Network", true, true, false);
+        embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Lobby", true, true, false);
+        var survivalEmbed = new ServerEmbed(document.getElementById("survival-emebed"), "500px");
+        survivalEmbed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev", "Survival", true, true, false);
     }
 
     function rePing() {
