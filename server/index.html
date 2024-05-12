@@ -78,7 +78,7 @@
         var embed = new ServerEmbed(document.getElementById("embed"), "500px");
         embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Lobby", true, true, false);
         var survivalEmbed = new ServerEmbed(document.getElementById("survival-emebed"), "500px");
-        survivalEmbed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev", "Survival", true, true, false);
+        survivalEmbed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev:25566", "Survival", true, true, false);
     }
 
     function rePing() {
@@ -86,6 +86,11 @@
         oldEmbed.parentNode.removeChild(oldEmbed);
         var newEmbed = document.createElement("div");
         newEmbed.id = "embed";
+        document.getElementById("serverpinger").appendChild(newEmbed);
+        var oldSurvivalEmbed = document.getElementById("survival-embed");
+        oldSurvivalEmbed.parentNode.removeChild(oldSurvivalEmbed);
+        var newSurvivalEmbed = document.createElement("div");
+        newSurvivalEmbed.id = "survival-embed";
         document.getElementById("serverpinger").appendChild(newEmbed);
         pingServer();
     }
