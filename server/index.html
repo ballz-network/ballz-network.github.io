@@ -62,12 +62,11 @@
     </nav>
     <section id="serverpinger">
     <div id="embed"></div>
-    <div id="surival-embed"></div>
     </section>
     <section id="connect">
         <h2>Connect</h2>
         <p>Join us now!</p>
-        <p>Server IP: <strong>not available yet.</strong></p>
+        <p>Server IP: <code>wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/</code></p>
     </section>
     <footer>
         <p>&copy; 2024 Ballz Network. All rights reserved.</p>
@@ -76,9 +75,7 @@
     <script>
     function pingServer() {
         var embed = new ServerEmbed(document.getElementById("embed"), "500px");
-        embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Lobby", true, true, false);
-        var survivalEmbed = new ServerEmbed(document.getElementById("survival-emebed"), "500px");
-        survivalEmbed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/:25566", "Survival", true, true, false);
+        embed.ping("wss://laughing-space-spork-69v6vvqx7pgvf6w-8081.app.github.dev/", "Ballz Network", true, true, false);
     }
 
     function rePing() {
@@ -87,12 +84,6 @@
         var newEmbed = document.createElement("div");
         newEmbed.id = "embed";
         document.getElementById("serverpinger").appendChild(newEmbed);
-        var oldSurvivalEmbed = document.getElementById("survival-embed");
-        oldSurvivalEmbed.parentNode.removeChild(oldSurvivalEmbed);
-        var newSurvivalEmbed = document.createElement("div");
-        newSurvivalEmbed.id = "survival-embed";
-        document.getElementById("serverpinger").appendChild(newEmbed);
-        pingServer();
     }
 
     pingServer();
